@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiFinder.Persistance", "Ap
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiFinder.Scheduler", "ApiFinder.Scheduler\ApiFinder.Scheduler.csproj", "{6A76855D-C818-4A10-B3A7-74E5AED6D9CD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiFinder.Infrastructure", "ApiFinder.Infrastructure\ApiFinder.Infrastructure.csproj", "{8F2DB372-4896-491F-9BBA-2CE3C4E44AE3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{6A76855D-C818-4A10-B3A7-74E5AED6D9CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A76855D-C818-4A10-B3A7-74E5AED6D9CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A76855D-C818-4A10-B3A7-74E5AED6D9CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F2DB372-4896-491F-9BBA-2CE3C4E44AE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F2DB372-4896-491F-9BBA-2CE3C4E44AE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F2DB372-4896-491F-9BBA-2CE3C4E44AE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F2DB372-4896-491F-9BBA-2CE3C4E44AE3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
