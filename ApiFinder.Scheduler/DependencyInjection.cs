@@ -12,11 +12,14 @@ namespace ApiFinder.Scheduler
 {
     public static class DependencyInjection
     {
-        public static IServiceCollection AddServiceWorker(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddScheduler(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddHangfire(x =>
             {
-                x.UseSqlServerStorage(configuration.GetConnectionString("DefaultConnection"));
+                x.UseSqlServerStorage(configuration.GetConnectionString("Hangfire"));
+                x.SetDataCompatibilityLevel(CompatibilityLevel.Version_170)
+                   .UseSimpleAssemblyNameTypeSerializer()
+                   .UseRecommendedSerializerSettings();
             });
             services.AddHangfireServer();
 

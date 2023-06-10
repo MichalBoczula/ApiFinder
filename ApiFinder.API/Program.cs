@@ -1,3 +1,9 @@
+using ApiFinder.Infrastructure.DependencyInjection;
+using ApiFinder.Infrastructure.ExternalServices.Abstract;
+using ApiFinder.Infrastructure.ExternalServices.Concrete;
+using ApiFinder.Infrastructure.Policies.ExternalServices;
+using ApiFinder.Scheduler;
+using Hangfire;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,7 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 var logger = new LoggerConfiguration()
     .ReadFrom.Configuration(builder.Configuration)
-    .Enrich.FromLogContext()
+    .Enrich.FromLogContext()    
     .CreateLogger();
 
 builder.Logging.ClearProviders();
@@ -16,6 +22,11 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddInfrastructure();
+builder.Services.AddHttpClient<IExternalServiceRequestHandler, ExternalServiceRequestHandler>()
+     .AddPolicyHandler(ExternalServiceRequestHandlerPolicy.GetRetryPolicy())
+     .AddPolicyHandler(ExternalServiceRequestHandlerPolicy.GetCircuitBreakerPolicy());
+builder.Services.AddScheduler(builder.Configuration);
 
 var app = builder.Build();
 
@@ -28,8 +39,10 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseHangfireDashboard("/dashboard");
+
 app.UseAuthorization();
 
 app.MapControllers();
-
+ 
 app.Run();

@@ -15,7 +15,7 @@ namespace ApiFinder.Scheduler
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            //_recurringJobManager.AddOrUpdate("jobId", () => Debug.WriteLine("Drugi Test Ziom _________________________________________"), Cron.Minutely);
+            _recurringJobManager.AddOrUpdate("jobId", () => Debug.WriteLine("test test test test test test test test test test test test test test test test test test test test test"), Cron.Minutely);
         }
     }
 }
