@@ -2,6 +2,7 @@ using ApiFinder.Infrastructure.DependencyInjection;
 using ApiFinder.Infrastructure.ExternalServices.Abstract;
 using ApiFinder.Infrastructure.ExternalServices.Concrete;
 using ApiFinder.Infrastructure.Policies.ExternalServices;
+using ApiFinder.Persistance.DependencyInjection;
 using ApiFinder.Scheduler;
 using Hangfire;
 using Serilog;
@@ -23,6 +24,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddInfrastructure();
+builder.Services.AddPersistance(builder.Configuration);
 builder.Services.AddHttpClient<IExternalServiceRequestHandler, ExternalServiceRequestHandler>()
      .AddPolicyHandler(ExternalServiceRequestHandlerPolicy.GetRetryPolicy())
      .AddPolicyHandler(ExternalServiceRequestHandlerPolicy.GetCircuitBreakerPolicy());

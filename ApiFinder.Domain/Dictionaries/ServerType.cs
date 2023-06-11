@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ApiFinder.Domain.Dictionaries
 {
-    internal class ServerType
+    public class ServerType
     {
         public int Id { get; set; }
         public int Name { get; set; }

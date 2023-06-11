@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Microsoft.Extensions.Http.Polly" Version="6.0.16" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
     <PackageReference Include="Serilog.AspNetCore" Version="6.0.0" />
@@ -17,6 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ApiFinder.Infrastructure\ApiFinder.Infrastructure.csproj" />
+    <ProjectReference Include="..\ApiFinder.Persistance\ApiFinder.Persistance.csproj" />
     <ProjectReference Include="..\ApiFinder.Scheduler\ApiFinder.Scheduler.csproj" />
   </ItemGroup>
 
