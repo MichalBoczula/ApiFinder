@@ -6,7 +6,7 @@ namespace ApiFinder.Persistance.Seed.Entities
 {
     internal static class ApiInformationSeed
     {
-        internal static void CreateServerTypsSeed(this ModelBuilder modelBuilder)
+        internal static void CreateApiInformationSeed(this ModelBuilder modelBuilder)
         {
             var testServer = new ApiInformation()
             {

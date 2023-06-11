@@ -5,7 +5,7 @@ namespace ApiFinder.Persistance.Seed.Dictionaries
 {
     internal static class StatusSeed
     {
-        internal static void CreateServerTypsSeed(this ModelBuilder modelBuilder)
+        internal static void CreateStatusSeed(this ModelBuilder modelBuilder)
         {
             var online = new Status()
             {
@@ -21,7 +21,7 @@ namespace ApiFinder.Persistance.Seed.Dictionaries
 
             var notDefined = new Status()
             {
-                Id = 2,
+                Id = 3,
                 Name = "Not defined"
             };
 

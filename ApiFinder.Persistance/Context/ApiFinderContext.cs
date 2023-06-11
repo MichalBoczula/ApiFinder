@@ -1,5 +1,7 @@
 ﻿using ApiFinder.Domain.Entities;
 using ApiFinder.Domain.Histories;
+using ApiFinder.Persistance.Seed.Dictionaries;
+using ApiFinder.Persistance.Seed.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 using System.Diagnostics.CodeAnalysis;
@@ -19,6 +21,9 @@ namespace ApiFinder.Persistance.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+            modelBuilder.CreateServerTypsSeed();
+            modelBuilder.CreateStatusSeed();
+            modelBuilder.CreateApiInformationSeed();
         }
     }
 }
