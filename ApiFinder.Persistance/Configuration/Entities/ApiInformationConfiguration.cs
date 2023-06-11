@@ -8,14 +8,16 @@ namespace ApiFinder.Persistance.Configuration.Entities
     {
         public void Configure(EntityTypeBuilder<ApiInformation> builder)
         {
-            builder.HasKey(k => k.Id);
-            builder.HasIndex(k => k.Id);
-            builder.Property(k => k.Name)
+            builder.HasKey(x => x.Id);
+            builder.HasIndex(x => x.Id);
+            builder.Property(x => x.Name)
                 .HasMaxLength(255);
-            builder.HasIndex(x => x.ServerTypeId);
-            builder.Property(k => k.Url)
+            builder.Property(x => x.ServerType)
+                .HasConversion<int>();
+            builder.Property(x => x.Url)
                 .HasMaxLength(255);
-            builder.Property(k => k.StatusId);
+            builder.Property(x => x.Status)
+                .HasConversion<int>();
         }
     }
 }

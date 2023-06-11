@@ -16,9 +16,9 @@ namespace ApiFinder.Persistance.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
-                    ServerTypeId = table.Column<int>(type: "int", nullable: false),
+                    ServerType = table.Column<int>(type: "int", nullable: false),
                     Url = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
-                    StatusId = table.Column<int>(type: "int", nullable: false)
+                    Status = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -31,7 +31,7 @@ namespace ApiFinder.Persistance.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<int>(type: "int", maxLength: 255, nullable: false)
+                    Name = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -44,7 +44,7 @@ namespace ApiFinder.Persistance.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<int>(type: "int", maxLength: 255, nullable: false)
+                    Name = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -58,9 +58,9 @@ namespace ApiFinder.Persistance.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ApiInformationId = table.Column<int>(type: "int", nullable: false),
-                    Name = table.Column<int>(type: "int", maxLength: 255, nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     ServerTypeId = table.Column<int>(type: "int", nullable: false),
-                    Url = table.Column<int>(type: "int", maxLength: 255, nullable: false),
+                    Url = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     StatusId = table.Column<int>(type: "int", nullable: false),
                     CheckingTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ErrorDescription = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: true)
@@ -95,11 +95,6 @@ namespace ApiFinder.Persistance.Migrations
                 name: "IX_ApiInformations_Id",
                 table: "ApiInformations",
                 column: "Id");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_ApiInformations_ServerTypeId",
-                table: "ApiInformations",
-                column: "ServerTypeId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ServerType_Id",
