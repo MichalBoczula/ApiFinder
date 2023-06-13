@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ApiFinder.Application.Features.Commands.UpdateApiInformation
 {
-    public class UpdateApiInformationCommandResult
+    public class UpdateApiInformationCommandExternal
     {
-        public int? CreatedApiInformationId { get; set; }
-        public string? ErrorDescription { get; set; }
+        public int ApiInformationId { get; set; }
+        public Domain.Enums.Status Status { get; set; }
     }
 }

@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ApiFinder.Application\ApiFinder.Application.csproj" />
     <ProjectReference Include="..\ApiFinder.Infrastructure\ApiFinder.Infrastructure.csproj" />
     <ProjectReference Include="..\ApiFinder.Persistance\ApiFinder.Persistance.csproj" />
     <ProjectReference Include="..\ApiFinder.Scheduler\ApiFinder.Scheduler.csproj" />

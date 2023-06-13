@@ -6,6 +6,7 @@ using ApiFinder.Infrastructure.Policies.ExternalServices;
 using ApiFinder.Persistance.DependencyInjection;
 using ApiFinder.Scheduler;
 using Hangfire;
+using Microsoft.Extensions.DependencyInjection;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);

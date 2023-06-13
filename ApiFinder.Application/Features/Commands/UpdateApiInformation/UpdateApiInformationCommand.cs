@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace ApiFinder.Application.Features.Commands.UpdateApiInformation
 {
-    internal class UpdateApiInformationCommand : IRequest<UpdateApiInformationCommandResult>
+    public class UpdateApiInformationCommand : IRequest<UpdateApiInformationCommandResult>
     {
-        public int ApiInformation { get; set; }
+        public int ApiInformationId { get; set; }
+        public Domain.Enums.Status Status { get; set; }
     }
 }

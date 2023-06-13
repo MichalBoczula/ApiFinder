@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ApiFinder.Application.Features.Commands.AddApiInformationHistory
 {
-    internal class AddApiInformationHistoryCommandResult
+    public class AddApiInformationHistoryCommandResult
     {
     }
 }

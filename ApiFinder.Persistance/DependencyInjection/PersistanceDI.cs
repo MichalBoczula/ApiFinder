@@ -1,4 +1,5 @@
-﻿using ApiFinder.Persistance.Context;
+﻿using ApiFinder.Application.Contracts;
+using ApiFinder.Persistance.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -18,6 +19,9 @@ namespace ApiFinder.Persistance.DependencyInjection
             {
                 options.UseSqlServer(configuration.GetConnectionString("Application"));
             });
+
+            services.AddScoped<IApiFinderContext, ApiFinderContext>();
+
             return services;
         }
     }

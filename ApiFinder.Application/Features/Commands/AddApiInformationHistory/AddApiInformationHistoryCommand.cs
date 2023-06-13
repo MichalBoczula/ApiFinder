@@ -8,7 +8,7 @@ using MediatR;
 
 namespace ApiFinder.Application.Features.Commands.AddApiInformationHistory
 {
-    internal class AddApiInformationHistoryCommand : IRequest<AddApiInformationHistoryCommandResult>
+    public class AddApiInformationHistoryCommand : IRequest<AddApiInformationHistoryCommandResult>
     {
     }
 }

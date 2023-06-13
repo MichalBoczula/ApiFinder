@@ -8,7 +8,7 @@ using MediatR;
 
 namespace ApiFinder.Application.Features.Queries.GetApiInformationList
 {
-    internal class GetApiInformationListQuery : IRequest<GetApiInformationListQueryResult>
+    public class GetApiInformationListQuery : IRequest<GetApiInformationListQueryResult>
     {
     }
 }

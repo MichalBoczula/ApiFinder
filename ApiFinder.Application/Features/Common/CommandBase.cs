@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ApiFinder.Application.Features.Common
 {
-    internal class CommandBase
+    public class CommandBase
     {
         protected readonly IApiFinderContext _context;
         protected readonly IMapper _mapper;
