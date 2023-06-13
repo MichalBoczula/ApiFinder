@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ApiFinder.Application.Features.Queries.GetApiInformationList
 {
-    public class GetApiInformationListQueryHandler : QueryBase, IRequestHandler<GetApiInformationListQuery, GetApiInformationListQueryResult>
+    internal class GetApiInformationListQueryHandler : QueryBase, IRequestHandler<GetApiInformationListQuery, GetApiInformationListQueryResult>
     {
         public GetApiInformationListQueryHandler(IApiFinderContext context, IMapper mapper)
             : base(context, mapper)

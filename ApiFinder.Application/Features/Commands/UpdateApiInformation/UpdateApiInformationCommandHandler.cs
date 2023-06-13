@@ -14,7 +14,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ApiFinder.Application.Features.Commands.UpdateApiInformation
 {
-    public class UpdateApiInformationCommandHandler : CommandBase, IRequestHandler<UpdateApiInformationCommand, UpdateApiInformationCommandResult>
+    internal class UpdateApiInformationCommandHandler : CommandBase, IRequestHandler<UpdateApiInformationCommand, UpdateApiInformationCommandResult>
     {
         public UpdateApiInformationCommandHandler(IApiFinderContext context, IMapper mapper)
             : base(context, mapper)

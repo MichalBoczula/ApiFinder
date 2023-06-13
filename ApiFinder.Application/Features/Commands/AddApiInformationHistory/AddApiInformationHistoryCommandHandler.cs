@@ -13,7 +13,7 @@ using MediatR;
 
 namespace ApiFinder.Application.Features.Commands.AddApiInformationHistory
 {
-    public class AddApiInformationHistoryCommandHandler : CommandBase, IRequestHandler<AddApiInformationHistoryCommand, AddApiInformationHistoryCommandResult>
+    internal class AddApiInformationHistoryCommandHandler : CommandBase, IRequestHandler<AddApiInformationHistoryCommand, AddApiInformationHistoryCommandResult>
     {
         public AddApiInformationHistoryCommandHandler(IApiFinderContext context, IMapper mapper)
             : base(context, mapper)

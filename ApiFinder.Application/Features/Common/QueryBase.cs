@@ -3,7 +3,7 @@ using AutoMapper;
 
 namespace ApiFinder.Application.Features.Common
 {
-    public class QueryBase
+    internal class QueryBase
     {
         protected readonly IApiFinderContext _context;
         protected readonly IMapper _mapper;
