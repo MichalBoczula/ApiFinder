@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,9 +17,18 @@ namespace ApiFinder.Infrastructure.ExternalServices.Concrete
             _httpClient = httpClient;
         }
 
-        public Task<bool> CheckHealth(string url)
+        public async Task<HttpStatusCode> CheckHealth(string url)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var response = await _httpClient.GetAsync(url);
+                return response.StatusCode;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return HttpStatusCode.InternalServerError;
+            }
         }
     }
 }

@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ApiFinder.Application\ApiFinder.Application.csproj" />
     <ProjectReference Include="..\ApiFinder.Domain\ApiFinder.Domain.csproj" />
   </ItemGroup>
   

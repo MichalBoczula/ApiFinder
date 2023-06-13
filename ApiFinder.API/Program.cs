@@ -1,3 +1,4 @@
+using ApiFinder.Application.DependencyInjection;
 using ApiFinder.Infrastructure.DependencyInjection;
 using ApiFinder.Infrastructure.ExternalServices.Abstract;
 using ApiFinder.Infrastructure.ExternalServices.Concrete;
@@ -25,6 +26,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddInfrastructure();
 builder.Services.AddPersistance(builder.Configuration);
+builder.Services.AddApplication();
 builder.Services.AddHttpClient<IExternalServiceRequestHandler, ExternalServiceRequestHandler>()
      .AddPolicyHandler(ExternalServiceRequestHandlerPolicy.GetRetryPolicy())
      .AddPolicyHandler(ExternalServiceRequestHandlerPolicy.GetCircuitBreakerPolicy());

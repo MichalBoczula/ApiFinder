@@ -7,9 +7,11 @@ using Microsoft.EntityFrameworkCore.Storage;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 
+using ApiFinder.Application.Contracts;
+
 namespace ApiFinder.Persistance.Context
 {
-    internal class ApiFinderContext : DbContext
+    internal class ApiFinderContext : DbContext, IApiFinderContext
     {
         public DbSet<ApiInformation> ApiInformations { get; set; }
         public DbSet<ApiInformationHistory> ApiInformationHistoryList { get; set; }
@@ -24,6 +26,11 @@ namespace ApiFinder.Persistance.Context
             modelBuilder.CreateServerTypsSeed();
             modelBuilder.CreateStatusSeed();
             modelBuilder.CreateApiInformationSeed();
+        }
+
+        public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken)
+        {
+            return await base.SaveChangesAsync(cancellationToken);
         }
     }
 }
