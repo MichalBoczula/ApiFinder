@@ -4,6 +4,8 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>24641714-ead2-42b9-9fe2-d34ca61280d4</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,6 +14,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.Extensions.Http.Polly" Version="6.0.16" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.17.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
     <PackageReference Include="Serilog.AspNetCore" Version="6.0.0" />
     <PackageReference Include="Serilog.Enrichers.Environment" Version="2.2.0" />
